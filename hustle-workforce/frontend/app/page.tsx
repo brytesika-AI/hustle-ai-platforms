@@ -10,7 +10,7 @@ import { BarChart } from "../components/BarChart";
 import { DataTable } from "../components/DataTable";
 import { MetricCard } from "../components/MetricCard";
 import { SectionPanel } from "../components/SectionPanel";
-import { analyzeWorkspace, fetchWorkspace, generateBrief, queryKnowledge, requestDecisionCopilot } from "../lib/api";
+import { analyzeWorkspace, fetchWorkspace, generateBrief, queryKnowledge, requestDecisionCopilot, validateWorkspaceFiles } from "../lib/api";
 import { WorkspacePayload } from "../lib/types";
 
 const sectionNames = [
@@ -187,13 +187,21 @@ export default function HomePage() {
       });
   }, []);
 
-  function onFileChange(event: ChangeEvent<HTMLInputElement>) {
+  async function onFileChange(event: ChangeEvent<HTMLInputElement>) {
     const files = Array.from(event.target.files || []);
     setSelectedFiles(files);
-    if (files.length > 0) {
-      setAnalysisStatus(`Upload ready: ${files.length} file(s) selected. Click Run Analysis to refresh this section.`);
-    } else {
+    setError("");
+    if (files.length === 0) {
       setAnalysisStatus("No upload detected, so synthetic data will be used.");
+      return;
+    }
+    try {
+      const validationMessage = await validateWorkspaceFiles(files);
+      setAnalysisStatus(`${validationMessage} Click Run Analysis to refresh this section.`);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Upload validation failed.";
+      setError(message);
+      setAnalysisStatus(message);
     }
   }
 
@@ -207,8 +215,8 @@ export default function HomePage() {
       setKnowledgeRows(payload.knowledge.default_query_results);
       setBrief(payload.executive_brief);
       setDecisionResponses(payload.agents.decision_copilot);
-      setStatus(selectedFiles.length > 0 ? "Analysis completed using uploaded dataset." : "Analysis completed using synthetic demo workspace.");
-      setAnalysisStatus(selectedFiles.length > 0 ? "Analysis completed using uploaded dataset." : "No upload detected, so synthetic data was used.");
+      setStatus(selectedFiles.length > 0 ? "Uploaded file validated successfully. Report refreshed." : "Analysis completed using synthetic demo workspace.");
+      setAnalysisStatus(selectedFiles.length > 0 ? "Analysis completed using uploaded template." : "Analysis completed using synthetic demo data.");
     } catch (err) {
       const message = err instanceof Error ? err.message : "Analysis failed.";
       setError(message);
