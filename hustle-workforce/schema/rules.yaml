@@ -1,0 +1,20 @@
+knowledge_brain:
+  description: Knowledge model for Hustle Workforce synthetic demo content.
+  required_sources:
+    - raw
+    - wiki
+  document_fields:
+    - id
+    - source_type
+    - title
+    - content
+    - word_count
+    - created_at
+  lint_rules:
+    min_word_count: 40
+    require_title_line: true
+    require_footer: true
+  footer: "@BryteSikaStrategyAI"
+  query_defaults:
+    top_k: 5
+    minimum_term_length: 3

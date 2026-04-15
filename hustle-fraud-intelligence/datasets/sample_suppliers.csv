@@ -1,0 +1,5 @@
+supplier_id,supplier_name,dependency_pct,avg_invoice_value,late_invoice_edits,anomaly_score
+SUP-F001,Supplier Alpha,34,5200,3,76
+SUP-F002,Supplier Prime,41,6800,5,84
+SUP-F003,Supplier Delta,12,2100,0,41
+SUP-F004,Supplier Metro,9,1850,1,36

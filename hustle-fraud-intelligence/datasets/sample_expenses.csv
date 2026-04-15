@@ -1,0 +1,6 @@
+expense_id,employee_group,category,amount,claim_count_30d,duplicate_signal,anomaly_score
+EXP-001,Field Ops,Travel,340,6,0,52
+EXP-002,Sales,Entertainment,890,4,1,77
+EXP-003,Management,Travel,1280,3,0,61
+EXP-004,Warehouse,Repairs,460,7,1,73
+EXP-005,Support,Meals,120,8,0,49

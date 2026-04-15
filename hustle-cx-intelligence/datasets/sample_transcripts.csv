@@ -1,0 +1,11 @@
+ticket_id,channel,customer_segment,product,issue_category,severity,sentiment,response_hours,resolution_hours,churn_signal,transcript
+CX-001,WhatsApp,Prepaid,Mobile Data,Billing,high,negative,3.2,14.0,high,"Customer says the recharge deduction is wrong, the support handoff was slow, and trust is dropping."
+CX-002,Call Centre,Pay TV,Home Entertainment,Signal Quality,medium,negative,1.5,9.0,medium,"Subscriber reports repeated signal drops during evening viewing and is threatening cancellation."
+CX-003,Email,SME Broadband,Business Internet,Installation,medium,neutral,4.8,26.0,medium,"Business customer is waiting for activation and says sales promised an earlier go-live date."
+CX-004,WhatsApp,Postpaid,Mobile Voice,Network Coverage,high,negative,2.4,18.0,high,"Customer says coverage failures continue in a key work zone and feels support is not escalating properly."
+CX-005,Chat,Streaming,Digital Subscription,Product UX,low,neutral,0.8,3.0,low,"User requests a simpler renewal flow and clearer error messaging in the app."
+CX-006,Call Centre,Insurance,Claims Portal,Claims Delay,high,negative,2.1,30.0,high,"Customer says the claims process feels opaque and delays are making the service hard to trust."
+CX-007,WhatsApp,SME Retail,POS Device,Device Reliability,medium,negative,1.3,8.0,medium,"Merchant reports device sync failures during peak checkout and wants a faster fix commitment."
+CX-008,Email,Energy Utility,Prepaid Meter,Top-up Failure,high,negative,5.1,21.0,high,"Customer says the meter top-up failed after payment and is escalating publicly."
+CX-009,Chat,Pay TV,Home Entertainment,Account Access,low,positive,0.4,1.2,low,"Customer appreciated the quick password reset and suggested a simpler login journey."
+CX-010,WhatsApp,Fintech Wallet,Digital Payments,Transaction Reversal,high,negative,1.7,16.0,high,"User says a reversal delay is affecting confidence and may push them to another provider."

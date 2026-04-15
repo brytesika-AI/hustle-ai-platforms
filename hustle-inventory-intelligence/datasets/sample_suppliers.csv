@@ -1,0 +1,9 @@
+supplier_id,supplier_name,country,reliability_score,dependency_pct,avg_delay_days
+SUP-001,Continental Beverage Supply,Zambia,82,34,2
+SUP-002,Regional Packaging Group,South Africa,76,29,4
+SUP-003,TechSource Imports,China,64,12,8
+SUP-004,Care Essentials Distributors,Kenya,71,10,5
+SUP-005,Office Chain Africa,Botswana,83,8,2
+SUP-006,Mobility Parts Network,Tanzania,68,9,6
+SUP-007,Agri Access Limited,Uganda,74,11,4
+SUP-008,Health Stock Partners,India,66,7,7

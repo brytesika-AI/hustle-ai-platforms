@@ -1,0 +1,11 @@
+risk_id,category,segment,exposure_area,severity,likelihood,impact_score,supplier_dependency_pct,customer_concentration_pct,days_cash_cover,compliance_gap,market_volatility,notes
+RISK-001,financial,SME Retail,Working Capital,high,high,84,22,31,21,medium,medium,"Cash cover has tightened while customer collections remain slow."
+RISK-002,operations,Field Service,Service Delivery,medium,high,68,18,24,37,low,medium,"Operational handoff delays are increasing missed commitments."
+RISK-003,supplier,Distribution,Primary Supplier,high,medium,79,64,20,42,low,high,"One supplier still controls a large share of inventory availability."
+RISK-004,customer,Enterprise Accounts,Customer Book,high,medium,73,12,56,49,low,low,"Revenue concentration is too dependent on a small number of buyers."
+RISK-005,compliance,Fintech Ops,Regulatory Process,medium,medium,61,10,18,55,high,medium,"Policy documentation is behind the operating model."
+RISK-006,market,Import Business,FX Exposure,high,high,81,28,14,33,medium,high,"Currency volatility is putting pressure on margin planning."
+RISK-007,operations,Warehouse,Fulfilment Risk,medium,medium,59,26,19,46,low,medium,"Cycle-time slippage is manageable but trending poorly."
+RISK-008,financial,Subscription Services,Receivables,high,medium,76,14,44,27,medium,low,"Slow payer concentration is raising short-term cash risk."
+RISK-009,supplier,Manufacturing,Input Dependency,medium,high,66,58,22,39,low,high,"Second-source coverage remains too thin for peak periods."
+RISK-010,customer,B2B Platform,Key Account Retention,medium,medium,63,16,48,51,low,medium,"A few accounts carry too much commercial weight."

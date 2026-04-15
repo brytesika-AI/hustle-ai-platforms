@@ -1,0 +1,11 @@
+transaction_id,transaction_type,region,amount,payment_method,merchant_category,counterparty,refund_flag,expense_flag,claim_flag,risk_score,notes
+FRD-001,customer_payment,Lusaka,1250,mobile_money,retail,Customer A,0,0,0,71,"High-value transaction outside normal customer pattern"
+FRD-002,refund,Johannesburg,890,card,subscription,Customer B,1,0,0,78,"Repeated refund request shortly after purchase"
+FRD-003,supplier_payment,Nairobi,5400,bank_transfer,procurement,Supplier Alpha,0,0,0,69,"Single supplier concentration and unusual timing"
+FRD-004,expense_reimbursement,Accra,340,cash,travel,Staff 14,0,1,0,63,"Expense claim outside normal category mix"
+FRD-005,claims_payout,Harare,2200,bank_transfer,insurance,Claimant Z,0,0,1,74,"Claim amount above norm with incomplete documentation"
+FRD-006,refund,Cape Town,460,card,digital_service,Customer Q,1,0,0,66,"Refund frequency above peer pattern"
+FRD-007,supplier_payment,Abuja,7100,bank_transfer,inventory,Supplier Prime,0,0,0,82,"Procurement dependency and invoice timing anomaly"
+FRD-008,expense_reimbursement,Dar es Salaam,190,mobile_money,operations,Staff 08,0,1,0,59,"Clustered low-value claims across same week"
+FRD-009,customer_payment,Kampala,3100,card,wholesale,Customer H,0,0,0,57,"High amount but still within seasonal pattern"
+FRD-010,claims_payout,Durban,2800,bank_transfer,insurance,Claimant T,0,0,1,77,"Manual override and repeated address association"

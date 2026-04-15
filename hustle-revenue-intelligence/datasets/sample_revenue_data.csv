@@ -1,0 +1,11 @@
+account_id,segment,region,product_line,base_price,discount_pct,units,revenue,churn_risk,upsell_score,cross_sell_score,driver,notes
+REV-001,SME Retail,Lusaka,POS Platform,120,5,84,9576,medium,72,60,pricing discipline,"Healthy unit movement, mild discounting pressure"
+REV-002,SME Services,Johannesburg,Business Internet,240,12,43,9070,high,55,44,churn exposure,"Renewal confidence weakening due to service complaints"
+REV-003,Telco Reseller,Nairobi,Data Bundle,38,2,620,23064,low,68,70,volume growth,"High-volume plan adoption supports expansion"
+REV-004,Pay TV Distributor,Accra,Premium Entertainment,95,18,150,11685,high,48,36,discount leakage,"Heavy discounting protecting weak retention"
+REV-005,Insurance Broker,Harare,Claims SaaS,310,4,29,8614,low,80,74,upsell readiness,"High-value customers open to workflow add-ons"
+REV-006,Fintech SME,Abuja,Payment Gateway,175,7,58,9433,medium,77,69,cross-sell readiness,"Wallet analytics bundle likely to convert"
+REV-007,Wholesale Network,Dar es Salaam,Fiber Access,420,9,19,7257,medium,62,57,expansion mix,"Higher price point but slower close cycle"
+REV-008,Energy Utility,Kampala,Billing Automation,260,6,34,8310,low,73,66,pricing power,"Strong retention and low discount stress"
+REV-009,Subscription Media,Cape Town,Streaming Plan,52,16,280,12230,high,59,41,churn drag,"Price-sensitive base requires packaging rethink"
+REV-010,Enterprise Partner,Durban,Workforce Suite,390,3,22,8316,low,88,82,solution expansion,"Strong multi-module adoption pattern"

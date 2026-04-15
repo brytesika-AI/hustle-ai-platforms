@@ -1,0 +1,7 @@
+tunnel: hustle-risk-intelligence-api
+credentials-file: /etc/cloudflared/hustle-risk-intelligence-api.json
+
+ingress:
+  - hostname: api.risk.example.com
+    service: http://backend:8000
+  - service: http_status:404

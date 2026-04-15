@@ -1,81 +1,184 @@
-# Monorepo Architecture
+# Architecture
 
-The Hustle AI monorepo is organized to support a multi-product AI portfolio with clear product boundaries and a disciplined shared platform layer.
+## Platform Upgrade
 
-## Architectural Principles
+Hustle AI now follows an agent-platform architecture rather than a dashboard-only pattern. Each product still presents an executive web interface, but the backend design now assumes persistent agents, structured artifacts, resumable workflows, background jobs, and model-routing discipline across the suite.
 
-### Product Isolation
-Each product lives in its own top-level folder so that it can evolve independently in roadmap, interface, and domain logic.
-
-### Shared Leverage
-Reusable concerns are consolidated into `shared/` so common UI patterns, utility functions, model routing logic, styling foundations, and Cloudflare deployment templates can be maintained once and applied consistently.
-
-### Executive Consistency
-The portfolio should feel like one company with multiple products, not multiple disconnected projects. Architecture supports that consistency by centralizing patterns that affect user trust, brand quality, and operational reliability.
-
-## Repository Layout
+## Architecture-Relevant Structure
 
 ```text
 hustle-ai-platforms/
-|-- docs/
-|-- shared/
-|   |-- components/
-|   |-- utils/
-|   |-- models/
-|   |-- styles/
-|   `-- cloudflare/
-|-- hustle-workforce/
-|-- hustle-cx-intelligence/
-|-- hustle-revenue-intelligence/
-|-- hustle-inventory-intelligence/
-|-- hustle-risk-intelligence/
-`-- hustle-fraud-intelligence/
+├── docs/
+├── shared/
+│   └── backend/
+│       ├── agents/
+│       ├── artifacts/
+│       ├── jobs/
+│       ├── memory/
+│       ├── workflows/
+│       ├── model_router/
+│       ├── reporting/
+│       ├── analytics/
+│       └── schemas/
+├── hustle-workforce/
+│   ├── artifacts/
+│   └── state/
+├── hustle-cx-intelligence/
+│   ├── artifacts/
+│   └── state/
+├── hustle-risk-intelligence/
+│   ├── artifacts/
+│   └── state/
+└── hustle-fraud-intelligence/
+    ├── artifacts/
+    └── state/
 ```
 
-## Shared Layer Responsibilities
+## Persistent Agents
 
-### `shared/components/`
-Reusable interface patterns, layout primitives, executive dashboard elements, KPI blocks, tables, and reporting surfaces.
+The platform now treats agents as durable operating components rather than one-shot text generators.
 
-### `shared/utils/`
-Cross-product helpers for formatting, validation, metrics handling, date logic, feature flags, and integration-safe abstractions.
+- agent identity is explicit through a shared registry model
+- agent memory has a defined storage root per product
+- checkpoints and continuation state are first-class concepts
+- copilots can evolve into monitoring agents, investigation agents, and recurring decision assistants
 
-### `shared/models/`
-Model routing and inference-adjacent logic, including provider selection, prompt orchestration, response normalization, and shared AI service contracts.
+This matters most in:
 
-### `shared/styles/`
-Common design tokens, typography foundations, spacing rules, color systems, and reusable presentation standards.
+- **Hustle Workforce** for recurring executive decision support and knowledge-brain continuation
+- **Hustle CX Intelligence** for transcript follow-up loops and churn-monitoring continuity
+- **Hustle Risk Intelligence** for ongoing exposure review and scenario continuation
+- **Hustle Fraud Intelligence** for investigation trails and anomaly follow-up workflows
 
-### `shared/cloudflare/`
-Cloudflare-first deployment templates, environment conventions, Worker patterns, Pages configuration, and reusable edge deployment guidance.
+## Artifact Layer
 
-## Product Folder Expectations
+Every major product now has an explicit artifact root plus structured subfolders for durable outputs such as:
 
-Each top-level product folder should remain self-contained. At minimum, each product should be able to own:
+- reports
+- executive briefs
+- decision briefs
+- wiki pages
+- trend snapshots
+- anomaly logs
+- investigation notes
+- governance briefings
 
-- Product-specific application code
-- Local documentation
-- Product-level configuration
-- Domain workflows and data contracts
-- Product-specific prompts, evaluators, or routing extensions
+The artifact layer is important because agent platforms create durable business outputs, not just ephemeral responses. The shared artifact-store abstraction gives the suite a consistent path to future R2-backed or object-store-backed persistence.
 
-Products may consume shared modules, but shared modules should not erase product ownership. Domain-specific logic belongs inside the relevant product boundary unless it is genuinely reusable across the portfolio.
+## Workflow Orchestration
 
-## Recommended Development Pattern
+The shared workflow layer introduces a standard shape for long-running work:
 
-1. Build product-specific business logic inside the relevant `hustle-*` folder.
-2. Promote repeated patterns into `shared/` only after they are proven reusable.
-3. Keep Cloudflare deployment standards uniform across products.
-4. Preserve a premium and coherent product experience through shared style and component systems.
+- workflow definitions
+- orchestration runs
+- multi-step execution context
+- continuation across time
 
-## Scale Benefits
+This supports flows like:
 
-This architecture improves:
+- multi-document research briefing in Hustle Workforce
+- root-cause review chains in CX Intelligence
+- recurring mitigation follow-up in Risk Intelligence
+- multi-day investigation sequences in Fraud Intelligence
 
-- Delivery speed across multiple product lines
-- Brand consistency across the suite
-- Engineering maintainability
-- Investor and recruiter readability
-- Future enterprise integration readiness
+## Async And Background Jobs
+
+The suite now has a shared job-definition and scheduler-plan layer so recurring work is part of the architecture rather than an afterthought.
+
+Target recurring jobs include:
+
+- nightly stock checks
+- complaint trend snapshots
+- weekly risk digests
+- fraud anomaly scans
+- executive summary generation
+
+At the product layer, backend payloads now expose planned recurring jobs so the runtime model is visible to both frontend and deployment layers.
+
+## Sandbox-Ready Task Model
+
+Some future tasks should run in isolated execution environments rather than inline request/response handlers. The architecture now leaves room for that through workflow and job abstractions.
+
+Examples:
+
+- batch fraud scans
+- large support transcript analysis
+- pricing scenario simulations
+- multi-document strategy brief generation
+
+This is especially important for fraud, risk, and research-heavy workloads where execution time, auditability, or package isolation may eventually justify a dedicated worker tier.
+
+## Unified Model Routing
+
+The shared model-router layer now separates task class from provider choice and now defaults to an open-source-first model catalog.
+
+- model resolution is now a shared concern
+- task-based routing decides whether a workload is reasoning, operational, or embedding-heavy
+- canonical model aliases are separate from provider model IDs
+- provider routing can be changed without rewriting product logic
+- Cloudflare remains the default edge-friendly path
+- provider failover is represented in the architecture
+- per-product overrides can be applied without forking the router
+
+Default shared model strategy:
+
+- `Qwen 2.5 Instruct` for copilots, executive summaries, multi-step business analysis, fraud and risk explanations, and decision support
+- `Mistral Small Instruct` for transcript classification, first-pass parsing, routine summaries, issue extraction, and lower-cost operational tasks
+- `bge-m3` for semantic search, clustering, retrieval, SME Knowledge Brain workloads, transcript similarity, and fraud or risk note retrieval
+
+This makes it easier to distinguish between:
+
+- lightweight UI copilots
+- medium-depth analytic summarizers
+- heavier long-form report generators
+- future sandboxed or batched agent tasks
+- retrieval and embedding-heavy knowledge workflows
+
+The architecture therefore treats model policy as a shared platform concern:
+
+1. product code declares the task class
+2. the router resolves the open-source default profile
+3. the provider adapter maps the canonical model to a provider-specific identifier
+4. product overrides can refine the choice without breaking the shared policy
+
+## Reporting Pipeline
+
+The reporting layer is now explicitly treated as a pipeline:
+
+1. analytics or agent output is produced
+2. workflow context selects the reporting format
+3. artifact storage persists the output
+4. the product frontend or downstream job can retrieve or display it
+
+That creates a clean path to future delivery channels like email digests, governance packs, and scheduled exports.
+
+## Cloudflare-First Implications
+
+The Cloudflare-first stance still holds, but the implications are now more platform-oriented:
+
+- `Cloudflare Pages` serves the frontends
+- `Cloudflare Tunnel` protects backend origins
+- `Workers`, `Queues`, or scheduled triggers can later become execution points for background workflows
+- `R2`, `D1`, or `KV` can become managed persistence targets for artifacts, job state, and agent memory when the platform moves beyond local file-backed state
+
+The current repository keeps persistence file-backed and product-local for simplicity, while making the future Cloudflare-native evolution obvious and low-friction.
+
+## Shared Backend Modules
+
+- `shared/backend/agents`: persistent agent identity and registry patterns
+- `shared/backend/memory`: state-store and history primitives
+- `shared/backend/artifacts`: artifact manifest and durable output handling
+- `shared/backend/workflows`: long-running workflow definitions and orchestration
+- `shared/backend/jobs`: recurring job definitions and scheduler planning
+- `shared/backend/model_router`: provider-aware route selection
+- `shared/backend/reporting`: report-pipeline outputs and markdown rendering
+- `shared/backend/schemas`: typed contracts for agents, jobs, workflows, artifacts, and model-routing decisions
+
+## Product Impact
+
+- **Hustle Workforce** now has explicit decision-brief, wiki-page, and agent-memory architecture paths
+- **Hustle CX Intelligence** now has trend-snapshot, root-cause follow-up, and persistent CX copilot paths
+- **Hustle Risk Intelligence** now has monitoring-log, scenario-brief, and recurring risk-digest paths
+- **Hustle Fraud Intelligence** now has anomaly-log, investigation-note, governance-briefing, and sandbox-ready task paths
 
 @BryteSikaStrategyAI

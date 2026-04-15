@@ -5,6 +5,8 @@ The `shared/` layer contains reusable building blocks that support consistency, 
 It is intended for cross-product assets that are genuinely reusable across multiple products.
 
 Included shared domains:
+- `frontend/` for Cloudflare-first frontend patterns and app-shell guidance
+- `backend/` for reusable Python service foundations, persistent-agent runtime patterns, workflows, jobs, memory, artifacts, reporting, and model routing
 - `components/` for reusable UI patterns
 - `utils/` for common helpers and business-safe utility logic
 - `models/` for provider-agnostic model routing foundations

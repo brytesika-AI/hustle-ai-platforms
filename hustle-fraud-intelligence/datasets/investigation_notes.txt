@@ -1,0 +1,7 @@
+Synthetic fraud and governance notes for Hustle Fraud Intelligence.
+
+Fraud and control failures in African SMEs often emerge as pattern breaks rather than direct proof. Transaction anomalies, supplier concentration, weak claims review, and refund abuse can all create material risk even when no formal conclusion is yet justified.
+
+The right product posture is to surface red flags, review priorities, and governance signals that help leadership respond earlier and more consistently.
+
+@BryteSikaStrategyAI

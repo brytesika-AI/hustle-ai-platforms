@@ -1,0 +1,11 @@
+sku,category,stock_on_hand,reorder_point,lead_time_days,avg_daily_sales,unit_cost,unit_price,supplier_id
+INV-001,Beverages,420,180,12,21,4.2,7.8,SUP-001
+INV-002,Household,95,120,18,9,12.5,21.0,SUP-002
+INV-003,Electronics,38,40,25,2,88.0,126.0,SUP-003
+INV-004,Groceries,610,260,10,34,2.4,4.6,SUP-001
+INV-005,Personal Care,72,90,20,6,16.0,28.0,SUP-004
+INV-006,Office Supply,210,100,14,5,7.0,14.5,SUP-005
+INV-007,Auto Parts,54,65,22,3,34.0,58.0,SUP-006
+INV-008,Agri Inputs,180,150,16,7,25.0,42.0,SUP-007
+INV-009,Packaging,540,220,9,29,1.6,3.5,SUP-002
+INV-010,Pharmacy,46,55,19,4,22.0,39.0,SUP-008

@@ -1,67 +1,83 @@
-# Deployment Strategy
+# Deployment
 
-Hustle AI follows a Cloudflare-first deployment strategy to support fast global delivery, edge-native performance, and a consistent operating model across products.
+## Deployment Model
 
-## Deployment Philosophy
+Every product still follows a Cloudflare-first pattern, but the suite now assumes more than request/response delivery. Deployment should be thought of in three layers:
 
-The portfolio is designed so each product can be deployed independently while following a shared deployment pattern. This creates operational flexibility without sacrificing consistency in infrastructure decisions.
+1. frontend delivery
+2. synchronous API delivery
+3. persistent agent and background-workload support
 
-## Cloudflare-First Model
+## Frontend Layer
 
-The shared deployment layer should assume Cloudflare as the primary hosting and edge platform for the portfolio.
+- deploy each Next.js frontend to `Cloudflare Pages`
+- configure `NEXT_PUBLIC_API_BASE_URL` per product
+- preserve per-product release cadence while keeping one monorepo
 
-Core platform expectations:
-- Cloudflare Pages for front-end delivery where applicable
-- Cloudflare Workers for APIs, orchestration endpoints, and edge logic
-- Shared environment-variable conventions across products
-- Reusable deployment templates stored in `shared/cloudflare/`
+## Backend API Layer
 
-## Product Deployment Pattern
+- run each FastAPI backend as a containerized service
+- expose backend origins through `Cloudflare Tunnel`
+- keep direct origin access private where possible
 
-Each product should be deployable as an individual surface with its own:
+## Persistent State Layer
 
-- Runtime configuration
-- Build output
-- Environment bindings
-- Domain-specific services
-- Product-level observability and release cycle
+The architecture now expects each core product to maintain:
 
-This supports a portfolio model where products can be launched, improved, or commercialized on separate timelines.
+- artifact storage
+- agent-memory storage
+- workflow-state storage
+- job-history storage
 
-## Shared Deployment Standards
+The repository currently models these as product-local directories so the suite remains runnable with minimal infrastructure. In production, these can evolve toward:
 
-The shared Cloudflare templates should standardize:
+- `R2` for artifacts and generated files
+- `D1` for workflow state and queryable job history
+- `KV` for lightweight agent checkpoints or routing hints
 
-- Worker configuration structure
-- Pages deployment defaults
-- Naming conventions for environments
-- Secrets and binding patterns
-- Logging and operational diagnostics
-- Reusable release documentation
+## Async And Background Execution
 
-## Recommended Environment Model
+The shared job and workflow layers are designed so the suite can later support:
 
-- `development` for active product iteration
-- `staging` for internal review and pre-release validation
-- `production` for client-facing or publicly visible releases
+- scheduled daily or weekly runs
+- long-running analysis outside direct user requests
+- resumable investigations or decision flows
+- isolated sandbox execution for heavier tasks
 
-Environment naming and configuration patterns should remain consistent across all six products.
+Recommended future Cloudflare-native execution points:
 
-## Why Cloudflare Fits The Portfolio
+- `Workers` for lightweight orchestration
+- `Queues` for asynchronous work handoff
+- scheduled Workers triggers for recurring digests and scans
 
-- Strong edge delivery for distributed user bases
-- Clean deployment model for modern web applications
-- Scalable operational footprint for a growing product suite
-- Practical fit for lean teams building premium software businesses
+## Model Routing In Deployment
 
-## Future Expansion
+Model routing is now a platform concern rather than a per-product detail.
 
-As products mature, the shared deployment layer can expand to include:
+- Cloudflare remains the default provider path
+- routing decisions can vary by task class
+- failover and provider substitution can be layered in without changing frontend contracts
 
-- Standardized CI and release workflows
-- Shared observability hooks
-- Rollback playbooks
-- Environment promotion rules
-- Cross-product deployment dashboards
+## Required Environment Variables
+
+- `NEXT_PUBLIC_API_BASE_URL`
+- `CLOUDFLARE_API_TOKEN`
+- `CLOUDFLARE_ACCOUNT_ID`
+- `CLOUDFLARE_ZONE_ID`
+- `CLOUDFLARE_AI_GATEWAY_BASE_URL` where model gatewaying is used
+
+## Recommended Runtime Split
+
+- `Pages`: frontend hosting
+- container host: FastAPI services
+- `Tunnel`: private origin exposure
+- future `R2/D1/KV/Workers`: agent persistence, job orchestration, and artifact durability
+
+## Operational Guidance
+
+- keep local file-backed state for demos and early deployments
+- move artifacts first when scaling beyond single-instance backends
+- move workflow and job history next when recurring automation becomes a product requirement
+- reserve sandboxed heavy execution for fraud, risk, large transcript, and research-heavy workloads
 
 @BryteSikaStrategyAI

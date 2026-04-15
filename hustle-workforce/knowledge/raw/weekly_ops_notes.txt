@@ -1,0 +1,7 @@
+Weekly operations notes for Hustle Workforce synthetic demo content.
+
+The business is seeing stable order volume from repeat customers, but warehouse picking speed is slowing in the final two days of each week. Supervisors have requested better visibility into labor allocation, absenteeism, and handoff delays between sales commitments and fulfillment planning.
+
+Management wants one operating view that links cash discipline, inventory risk, sales pipeline quality, and growth activity to practical decisions rather than isolated reports.
+
+@BryteSikaStrategyAI

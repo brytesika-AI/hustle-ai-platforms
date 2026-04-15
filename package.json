@@ -1,0 +1,21 @@
+{
+  "name": "hustle-ai-platforms",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@10.8.1",
+  "description": "Executive-grade AI product suite for African businesses, deployed on Cloudflare.",
+  "scripts": {
+    "dev:workforce": "pnpm --dir hustle-workforce/frontend dev",
+    "dev:cx": "pnpm --dir hustle-cx-intelligence/frontend dev",
+    "dev:revenue": "pnpm --dir hustle-revenue-intelligence/frontend dev",
+    "dev:inventory": "pnpm --dir hustle-inventory-intelligence/frontend dev",
+    "dev:risk": "pnpm --dir hustle-risk-intelligence/frontend dev",
+    "dev:fraud": "pnpm --dir hustle-fraud-intelligence/frontend dev",
+    "build:workforce": "pnpm --dir hustle-workforce/frontend build",
+    "build:cx": "pnpm --dir hustle-cx-intelligence/frontend build",
+    "build:revenue": "pnpm --dir hustle-revenue-intelligence/frontend build",
+    "build:inventory": "pnpm --dir hustle-inventory-intelligence/frontend build",
+    "build:risk": "pnpm --dir hustle-risk-intelligence/frontend build",
+    "build:fraud": "pnpm --dir hustle-fraud-intelligence/frontend build"
+  }
+}

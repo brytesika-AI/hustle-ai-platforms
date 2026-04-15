@@ -1,0 +1,7 @@
+tunnel: hustle-fraud-intelligence-api
+credentials-file: /etc/cloudflared/hustle-fraud-intelligence-api.json
+
+ingress:
+  - hostname: api.fraud.example.com
+    service: http://backend:8000
+  - service: http_status:404

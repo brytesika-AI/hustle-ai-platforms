@@ -1,72 +1,103 @@
-# Hustle AI
+# HUSTLE-AI-PLATFORMS
 
-Hustle AI is an executive-grade AI product suite built for African businesses that want sharper decisions, stronger operating discipline, and measurable commercial performance.
+Executive-grade AI product suite for African businesses, deployed with a Cloudflare-first architecture and structured as a production-ready monorepo.
 
-The portfolio is organized as a premium monorepo with a shared platform layer, a Cloudflare-first deployment model, and six focused product lines covering workforce intelligence, customer intelligence, revenue optimization, inventory visibility, risk monitoring, and fraud detection.
+## Hustle AI Overview
 
-## Portfolio Positioning
+Hustle AI is a portfolio of decision-support applications built for African SMEs, operators, distributors, retailers, subscription businesses, advisory firms, and risk teams that need commercially credible AI systems rather than demo dashboards. The suite combines Next.js frontends, FastAPI analytics services, reusable design primitives, shared reporting utilities, and Cloudflare deployment patterns so each product can ship independently without drifting away from the portfolio standard.
 
-Hustle AI is designed for operators, founders, commercial leaders, and enterprise decision-makers who need practical AI systems that can move from insight to action inside real businesses.
+The portfolio is anchored by **Hustle Workforce**, the flagship product for executive decision support across finance, operations, sales, growth, strategy, and SME institutional memory.
 
-The suite is anchored by **Hustle Workforce**, the flagship product in the portfolio. It establishes the benchmark for executive clarity across labor planning, productivity intelligence, performance visibility, and operating cadence. The remaining products extend that same standard into customer operations, pricing and growth, inventory control, risk oversight, and fraud defense.
+The suite now defaults to an open-source-first model strategy built around `Qwen 2.5 Instruct` for reasoning, `Mistral Small Instruct` for lower-cost operational AI tasks, and `bge-m3` for embeddings and retrieval.
 
 ## Product Suite
 
-### Hustle Workforce
-Flagship workforce intelligence product for labor visibility, productivity diagnostics, scheduling insight, performance monitoring, and executive workforce planning.
+| Product | Focus | Positioning |
+| --- | --- | --- |
+| Hustle Workforce | Workforce, finance, operations, strategy, SME Knowledge Brain | Flagship modular AI workforce platform for African SMEs |
+| Hustle CX Intelligence | Support, transcripts, churn, product insights | Customer intelligence platform for high-volume support environments |
+| Hustle Revenue Intelligence | Pricing, revenue drivers, churn impact, expansion | Revenue optimization platform for commercial decision support |
+| Hustle Inventory Intelligence | Stock visibility, replenishment, dead stock, suppliers | Inventory visibility and decision support for growth-stage businesses |
+| Hustle Risk Intelligence | Financial, operational, supplier, customer risk | Risk monitoring and scenario planning platform |
+| Hustle Fraud Intelligence | Anomalies, supplier fraud, expense abuse, governance | Fraud detection and governance decision support for African SMEs |
 
-### Hustle CX Intelligence
-Customer intelligence product for service quality, support performance, sentiment analysis, escalation visibility, and retention-oriented decision support.
+## Why African Businesses
 
-### Hustle Revenue Intelligence
-Revenue optimization product for pricing discipline, pipeline visibility, conversion analysis, commercial forecasting, and growth execution.
+African businesses often operate through fragmented workflows, WhatsApp-led customer journeys, distributor-heavy channels, cashflow constraints, volatile supplier conditions, and rapid informal growth. This suite is designed around those operating realities:
 
-### Hustle Inventory Intelligence
-Inventory visibility product for stock movement monitoring, replenishment decisions, supply risk awareness, and working-capital discipline.
+- executive clarity over fragmented data
+- lightweight uploads with synthetic demos for fast trials
+- boardroom-ready reporting instead of notebook-style output
+- practical AI copilots that support judgment without overstating certainty
+- Cloudflare-first delivery that keeps deployment lean and globally reachable
 
-### Hustle Risk Intelligence
-Risk monitoring product for operational risk detection, compliance visibility, exposure tracking, and early-warning oversight.
+## Architecture Overview
 
-### Hustle Fraud Intelligence
-Fraud detection product for anomaly monitoring, transaction pattern analysis, case prioritization, and trust protection.
+- `Next.js + TypeScript` frontends for executive dashboards, uploads, and interactive copilots
+- `FastAPI + pandas + duckdb/sqlite + pydantic` backends for analytics, scoring, and report generation
+- `shared/frontend` for layout, footer, card, chart, and upload primitives
+- `shared/backend` for schemas, model routing, analytics helpers, utilities, and reporting helpers
+- `shared/cloudflare` for Pages, Tunnel, Docker, and environment templates
+- synthetic datasets in each product plus shared sample-data guidance
 
-## Monorepo Design
+## Deployment Overview
 
-The repository is structured so that each product can operate as a self-contained application while reusing shared modules for UI, utilities, model routing, styling, and Cloudflare deployment standards.
+- Frontends target `Cloudflare Pages`
+- Backends are containerized FastAPI services designed for Cloudflare-compatible origin routing
+- `cloudflared` examples are included for secure private origin exposure
+- Cloudflare API credentials are expected through environment variables, with `CLOUDFLARE_API_TOKEN` documented in [docs/cloudflare_token_requirements.md](/C:/Users/bright.sikazwe/Downloads/Hustle%20AI%20Platforms/docs/cloudflare_token_requirements.md)
+- optional future extensions for Workers AI, D1, KV, or R2 are documented without making them mandatory
 
-- `docs/` contains portfolio, architecture, deployment, and brand guidance.
-- `shared/` contains reusable modules and deployment templates used across products.
-- Each `hustle-*` folder is a product boundary with its own README and local implementation surface.
+## Monetization Overview
 
-## Why This Structure Works
+The portfolio is positioned as a commercially viable product family for:
 
-- It supports faster product launches without fragmenting engineering standards.
-- It keeps brand expression consistent across the portfolio.
-- It makes technical due diligence easier for recruiters, investors, and enterprise buyers.
-- It creates a clear path from shared infrastructure to product-specific execution.
+- African SMEs and operator-led businesses
+- retail and distribution businesses
+- subscription and support-heavy businesses
+- advisory firms running client diagnostics
+- finance, risk, audit, and governance teams
 
-## Initial Build Priorities
+Suggested revenue models:
 
-1. Hustle Workforce
-2. Hustle CX Intelligence
-3. Hustle Revenue Intelligence
-4. Hustle Inventory Intelligence
-5. Hustle Risk Intelligence
-6. Hustle Fraud Intelligence
+- per-company SaaS subscription
+- implementation and onboarding fees
+- premium reporting and executive briefing packages
+- advisor and channel-partner licensing
+- industry bundles for telco, retail, logistics, and multi-branch SMEs
+
+## Development Notes
+
+1. Install Node dependencies from the monorepo root with `pnpm install`.
+2. Install backend dependencies per product with `python -m pip install -r backend/requirements.txt`.
+3. Run a frontend from its `frontend` directory and a backend from its `backend` directory.
+4. Use `.env` files derived from `shared/cloudflare/env/.env.cloudflare.example`.
+5. Do not commit live Cloudflare secrets.
+
+## Product Links
+
+- [Hustle Workforce](/C:/Users/bright.sikazwe/Downloads/Hustle%20AI%20Platforms/hustle-workforce/README.md)
+- [Hustle CX Intelligence](/C:/Users/bright.sikazwe/Downloads/Hustle%20AI%20Platforms/hustle-cx-intelligence/README.md)
+- [Hustle Revenue Intelligence](/C:/Users/bright.sikazwe/Downloads/Hustle%20AI%20Platforms/hustle-revenue-intelligence/README.md)
+- [Hustle Inventory Intelligence](/C:/Users/bright.sikazwe/Downloads/Hustle%20AI%20Platforms/hustle-inventory-intelligence/README.md)
+- [Hustle Risk Intelligence](/C:/Users/bright.sikazwe/Downloads/Hustle%20AI%20Platforms/hustle-risk-intelligence/README.md)
+- [Hustle Fraud Intelligence](/C:/Users/bright.sikazwe/Downloads/Hustle%20AI%20Platforms/hustle-fraud-intelligence/README.md)
 
 ## Repository Map
 
 ```text
 hustle-ai-platforms/
-|-- README.md
-|-- docs/
-|-- shared/
-|-- hustle-workforce/
-|-- hustle-cx-intelligence/
-|-- hustle-revenue-intelligence/
-|-- hustle-inventory-intelligence/
-|-- hustle-risk-intelligence/
-`-- hustle-fraud-intelligence/
+├── README.md
+├── package.json
+├── pnpm-workspace.yaml
+├── docs/
+├── shared/
+├── hustle-workforce/
+├── hustle-cx-intelligence/
+├── hustle-revenue-intelligence/
+├── hustle-inventory-intelligence/
+├── hustle-risk-intelligence/
+└── hustle-fraud-intelligence/
 ```
 
 @BryteSikaStrategyAI
