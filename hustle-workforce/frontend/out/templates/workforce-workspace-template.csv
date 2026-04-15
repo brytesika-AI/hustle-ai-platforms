@@ -1,0 +1,4 @@
+area,source,text,transactions,inventory,crm
+finance,bank_statement_q1.csv,"Collections slowed after two major customers paid late.",1485000,0,0
+operations,ops_notes_march.txt,"Delivery delays increased when one branch ran short of stock.",0,240,0
+sales,whatsapp_pipeline_export.csv,"Follow-up quality improved when leads were contacted within one day.",0,0,58

@@ -1,0 +1,23 @@
+<mxfile host="app.diagrams.net" modified="2026-04-15T10:00:00.000Z" agent="Codex" version="24.7.17">
+  <diagram id="01" name="01 Hustle AI Portfolio Map">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="Hustle AI Portfolio" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1f2937;fontColor=#ffffff;strokeColor=#111827;" vertex="1" parent="1"><mxGeometry x="620" y="40" width="240" height="60" as="geometry"/></mxCell>
+        <mxCell id="3" value="Hustle Workforce&#xa;Flagship" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;" vertex="1" parent="1"><mxGeometry x="640" y="160" width="200" height="70" as="geometry"/></mxCell>
+        <mxCell id="4" value="CX Intelligence" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ecfccb;strokeColor=#65a30d;" vertex="1" parent="1"><mxGeometry x="200" y="320" width="180" height="60" as="geometry"/></mxCell>
+        <mxCell id="5" value="Revenue Intelligence" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#d97706;" vertex="1" parent="1"><mxGeometry x="420" y="320" width="180" height="60" as="geometry"/></mxCell>
+        <mxCell id="6" value="Inventory Intelligence" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f2fe;strokeColor=#0284c7;" vertex="1" parent="1"><mxGeometry x="640" y="320" width="180" height="60" as="geometry"/></mxCell>
+        <mxCell id="7" value="Risk Intelligence" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#7c3aed;" vertex="1" parent="1"><mxGeometry x="860" y="320" width="180" height="60" as="geometry"/></mxCell>
+        <mxCell id="8" value="Fraud Intelligence" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fee2e2;strokeColor=#dc2626;" vertex="1" parent="1"><mxGeometry x="1080" y="320" width="180" height="60" as="geometry"/></mxCell>
+        <mxCell id="9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="2" target="3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="3" target="4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="3" target="5"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="3" target="6"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="3" target="7"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="3" target="8"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

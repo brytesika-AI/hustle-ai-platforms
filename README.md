@@ -40,6 +40,8 @@ African businesses often operate through fragmented workflows, WhatsApp-led cust
 - `shared/cloudflare` for Pages, Tunnel, Docker, and environment templates
 - synthetic datasets in each product plus shared sample-data guidance
 
+Architecture diagrams for executive, platform, product, deployment, and data/AI reviews are available in [docs/diagrams/README.md](/C:/Users/bright.sikazwe/Downloads/Hustle%20AI%20Platforms/docs/diagrams/README.md).
+
 ## Deployment Overview
 
 - Frontends target `Cloudflare Pages`

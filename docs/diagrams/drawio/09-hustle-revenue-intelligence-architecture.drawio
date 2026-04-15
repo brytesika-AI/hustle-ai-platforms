@@ -1,0 +1,18 @@
+<mxfile host="app.diagrams.net" modified="2026-04-15T10:00:00.000Z" agent="Codex" version="24.7.17">
+  <diagram id="09" name="09 Hustle Revenue Intelligence Architecture">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" page="1" pageScale="1" pageWidth="1600" pageHeight="1000">
+      <root>
+        <mxCell id="0"/><mxCell id="1" parent="0"/>
+        <mxCell id="2" value="Pricing and revenue data" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f2fe;strokeColor=#0284c7;" vertex="1" parent="1"><mxGeometry x="80" y="200" width="190" height="70" as="geometry"/></mxCell>
+        <mxCell id="3" value="Revenue frontend&#xa;overview | pricing | churn | expansion" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;" vertex="1" parent="1"><mxGeometry x="340" y="180" width="280" height="90" as="geometry"/></mxCell>
+        <mxCell id="4" value="Commercial analytics" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#16a34a;" vertex="1" parent="1"><mxGeometry x="720" y="200" width="220" height="70" as="geometry"/></mxCell>
+        <mxCell id="5" value="Mistral + Qwen" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#7c3aed;" vertex="1" parent="1"><mxGeometry x="1030" y="200" width="220" height="70" as="geometry"/></mxCell>
+        <mxCell id="6" value="Commercial briefs and dashboards" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#d97706;" vertex="1" parent="1"><mxGeometry x="1330" y="200" width="220" height="70" as="geometry"/></mxCell>
+        <mxCell id="7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="2" target="3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="3" target="4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="4" target="5"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="5" target="6"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

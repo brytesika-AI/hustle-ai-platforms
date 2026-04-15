@@ -181,4 +181,8 @@ The current repository keeps persistence file-backed and product-local for simpl
 - **Hustle Risk Intelligence** now has monitoring-log, scenario-brief, and recurring risk-digest paths
 - **Hustle Fraud Intelligence** now has anomaly-log, investigation-note, governance-briefing, and sandbox-ready task paths
 
+## Diagram Pack
+
+The architecture diagram pack for GitHub and editable diagrams.net review is available in [docs/diagrams/README.md](/C:/Users/bright.sikazwe/Downloads/Hustle%20AI%20Platforms/docs/diagrams/README.md). It includes executive, platform, product, deployment, data/AI, and governance views for portfolio and interview use.
+
 @BryteSikaStrategyAI

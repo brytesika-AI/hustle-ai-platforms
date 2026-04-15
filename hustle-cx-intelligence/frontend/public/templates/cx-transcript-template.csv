@@ -1,0 +1,4 @@
+transcript_id,transcript_text,customer_sentiment,issue_type,resolution_hours,churn_signal
+CX-1001,"Customer says billing amount changed without warning.",negative,billing,14,high
+CX-1002,"Subscriber reports unstable service during peak evening hours.",negative,network,9,medium
+CX-1003,"Customer asks for help finding a feature inside the app.",neutral,usability,4,low

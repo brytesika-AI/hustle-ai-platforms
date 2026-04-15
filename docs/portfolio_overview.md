@@ -72,4 +72,8 @@ Every product should now be understood as:
 - a durable artifact producer
 - a future async workflow participant
 
+## Diagram Pack
+
+For portfolio reviews, LinkedIn sharing, recruiter screens, and CTO or Director interviews, use the architecture diagram pack in [docs/diagrams/README.md](/C:/Users/bright.sikazwe/Downloads/Hustle%20AI%20Platforms/docs/diagrams/README.md).
+
 @BryteSikaStrategyAI

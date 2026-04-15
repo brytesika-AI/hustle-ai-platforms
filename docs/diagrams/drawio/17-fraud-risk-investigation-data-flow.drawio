@@ -1,0 +1,18 @@
+<mxfile host="app.diagrams.net" modified="2026-04-15T10:00:00.000Z" agent="Codex" version="24.7.17">
+  <diagram id="17" name="17 Fraud Risk Investigation Data Flow">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" page="1" pageScale="1" pageWidth="1600" pageHeight="1000">
+      <root>
+        <mxCell id="0"/><mxCell id="1" parent="0"/>
+        <mxCell id="2" value="Fraud and risk inputs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f2fe;strokeColor=#0284c7;" vertex="1" parent="1"><mxGeometry x="90" y="210" width="180" height="70" as="geometry"/></mxCell>
+        <mxCell id="3" value="Validation and anomaly scoring" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;" vertex="1" parent="1"><mxGeometry x="380" y="210" width="220" height="70" as="geometry"/></mxCell>
+        <mxCell id="4" value="Operational extraction and retrieval" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#16a34a;" vertex="1" parent="1"><mxGeometry x="720" y="210" width="240" height="70" as="geometry"/></mxCell>
+        <mxCell id="5" value="Qwen explanation layer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#7c3aed;" vertex="1" parent="1"><mxGeometry x="1080" y="210" width="200" height="70" as="geometry"/></mxCell>
+        <mxCell id="6" value="Investigation guidance&#xa;governance outputs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#d97706;" vertex="1" parent="1"><mxGeometry x="1400" y="200" width="200" height="90" as="geometry"/></mxCell>
+        <mxCell id="7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="2" target="3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="3" target="4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="4" target="5"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="5" target="6"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

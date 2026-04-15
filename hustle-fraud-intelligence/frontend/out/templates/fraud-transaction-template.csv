@@ -1,0 +1,4 @@
+transaction_id,date,vendor,amount,risk_flag,claim_flag,refund_flag
+TX-1042,2026-03-14,Kopano Logistics,18450,high,1,0
+TX-1088,2026-03-18,Prime Stationery,9120,medium,0,1
+TX-1116,2026-03-26,Kopano Logistics,22300,high,1,0

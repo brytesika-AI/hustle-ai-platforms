@@ -1,0 +1,4 @@
+product,price,discount,revenue,customer_segment,channel
+Premium Plan,2500,12,480000,enterprise,direct sales
+Core Plan,1200,7,325000,retail,reseller
+Analytics Add-on,650,5,138000,wholesale,partner
