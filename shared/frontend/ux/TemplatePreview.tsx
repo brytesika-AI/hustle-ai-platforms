@@ -15,11 +15,21 @@ export function TemplatePreview({ title, rows, downloadHref, downloadLabel }: Pr
           <h3>{title}</h3>
           <p className="muted">Use this structure when preparing a sample SME dataset.</p>
         </div>
-        {downloadHref ? (
-          <a className="button secondary" href={downloadHref} download>
+      </div>
+      {downloadHref ? (
+        <div className="template-download">
+          <div>
+            <strong>Download the template first</strong>
+            <p className="muted">Use the sample file as your starting point, replace the example rows with your own business data, then upload it back and click Run Analysis.</p>
+          </div>
+          <a className="button" href={downloadHref} download>
             {downloadLabel || "Download Sample Template"}
           </a>
-        ) : null}
+        </div>
+      ) : null}
+      <div className="template-preview-note">
+        <span className="chip">Preview schema</span>
+        <span className="muted">The table below shows the expected column structure.</span>
       </div>
       <div className="table-card">
         <table>

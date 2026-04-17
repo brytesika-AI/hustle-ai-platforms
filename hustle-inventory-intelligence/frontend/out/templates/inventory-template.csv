@@ -1,0 +1,4 @@
+sku,on_hand,weekly_demand,reorder_point,dead_stock_days,supplier_name,dependency_pct,avg_delay_days,category
+COOK-12,42,18,48,6,Metro Inputs,44,5,fast_mover
+SOAP-08,210,12,80,34,Northern Packaging,21,3,slow_moving
+FLOUR-25,66,30,52,8,Harvest Milling,33,4,core_stock

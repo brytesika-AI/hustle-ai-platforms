@@ -1,0 +1,4 @@
+category,status,note,supplier,concentration_pct,customer,revenue_share_pct
+financial risk,watch,"Collections lag widened after two major invoices were paid late.",,,
+supplier dependency,high,"One supplier still carries too much operational leverage.",Metro Inputs,44,,
+customer concentration,medium,"One anchor customer still carries a meaningful share of revenue.",,,Anchor Retail Group,28
